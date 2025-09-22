@@ -1,0 +1,22 @@
+<div class="rate-container">
+  <h2>Exchange Rates</h2>
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <table *ngIf="!loading" class="rate-table">
+    <thead>
+      <tr>
+        <th>Base</th>
+        <th>Target</th>
+        <th>Rate</th>
+        <th>Last Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of rates">
+        <td>{{ r.baseCurrency }}</td>
+        <td>{{ r.targetCurrency }}</td>
+        <td>{{ r.rate | number:'1.4-4' }}</td>
+        <td>{{ r.lastUpdated | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
