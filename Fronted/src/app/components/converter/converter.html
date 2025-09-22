@@ -1,0 +1,54 @@
+<div class="converter-container">
+  <h2>Currency Converter</h2>
+
+  <div class="form-row">
+    <label>From:</label>
+    <select [(ngModel)]="fromCurrency">
+      <option *ngFor="let c of currencies" [value]="c.currencyCode">{{ c.currencyCode }}</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label>To:</label>
+    <select [(ngModel)]="toCurrency">
+      <option *ngFor="let c of currencies" [value]="c.currencyCode">{{ c.currencyCode }}</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label>Amount:</label>
+    <input type="number" [(ngModel)]="amount" />
+  </div>
+
+  <button (click)="convert()" [disabled]="loading">Convert</button>
+
+  <div *ngIf="convertedAmount !== null" class="result">
+    <p>{{ amount }} {{ fromCurrency }} = <strong>{{ convertedAmount | number:'1.2-2' }} {{ toCurrency }}</strong></p>
+    <small>Rate Used: {{ rateUsed }}</small>
+  </div>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <!-- Conversion History -->
+  <h3>Conversion History</h3>
+  <table *ngIf="history.length > 0" class="history-table">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Amount</th>
+        <th>Converted</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let h of history">
+        <td>{{ h.fromCurrency }}</td>
+        <td>{{ h.toCurrency }}</td>
+        <td>{{ h.amount }}</td>
+        <td>{{ h.convertedAmount }}</td>
+        <td>{{ h.rateUsed }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
