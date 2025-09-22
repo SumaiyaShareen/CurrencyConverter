@@ -1,0 +1,22 @@
+<div class="currency-container">
+  <h2>Available Currencies</h2>
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <table *ngIf="!loading" class="currency-table">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Symbol</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of currencies">
+        <td>{{ c.currencyCode }}</td>
+        <td>{{ c.currencyName }}</td>
+        <td>{{ c.symbol || '-' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,74 @@
+.currency-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  border-radius: 16px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.currency-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.currency-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3498db;
+  padding: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Table Styling */
+.currency-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+}
+
+.currency-table th,
+.currency-table td {
+  border: 1px solid #f0f0f0;
+  padding: 12px;
+  text-align: center;
+}
+
+.currency-table th {
+  background: linear-gradient(135deg, #6c5ce7, #3498db);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.currency-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.currency-table tr:hover {
+  background: #eef4ff;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
