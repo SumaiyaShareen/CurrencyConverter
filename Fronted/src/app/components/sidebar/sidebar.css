@@ -1,0 +1,65 @@
+/* Sidebar container */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #ffffff; /* white background */
+  border-right: 1px solid #e0e0e0;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Sidebar menu list */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar menu items */
+.sidebar ul li {
+  margin: 8px 0;
+}
+
+/* Sidebar links */
+.sidebar ul li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #2c3e50;
+  font-size: 15px;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Hover effect */
+.sidebar ul li a:hover {
+  background: #f0f7ff;
+  border-left: 4px solid #3498db;
+  color: #3498db;
+}
+
+/* Active link */
+.sidebar ul li a.active {
+  background: #eaf4ff;
+  border-left: 4px solid #3498db;
+  color: #3498db;
+  font-weight: 600;
+}
+
+/* Scrollbar (optional) */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 10px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
